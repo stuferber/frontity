@@ -13,8 +13,6 @@ import Page from "./page"
 import Loading from "./loading"
 import Error from "./error"
 
-
-
 const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
 

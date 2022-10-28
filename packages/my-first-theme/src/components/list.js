@@ -4,8 +4,9 @@ import React from "react"
 import { connect, styled } from "frontity"
 import Link from "@frontity/components/link"
 
-const List = ({ state, actions }) => {
+const List = ({ state, actions, libraries }) => {
   const data = state.source.get(state.router.link)
+  const Html2React = libraries.html2react.Component
 
   return (
     <Items>
@@ -14,6 +15,7 @@ const List = ({ state, actions }) => {
         return (
           <Link key={item.id} link={post.link}>
             {post.title.rendered}
+            <Html2React html={post.excerpt.rendered} />
           </Link>
         )
       })}
