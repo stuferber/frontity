@@ -19,11 +19,10 @@ const Root = ({ state, actions }) => {
   return (
     <>
       <Head>
-        <title>My First Frontity Theme</title>
-        <meta
-          name="description"
-          content="Based on the Frontity step by step tutorial"
-        />
+        <title>{state.frontity.title}</title>
+        <meta name="description" content={state.frontity.description} />
+        <html lang="en" />
+        <link rel="canonical" href={state.router.link} />
       </Head>
       <Global
         styles={css`
@@ -72,6 +71,7 @@ const Root = ({ state, actions }) => {
 }
 
 export default connect(Root)
+
 const Button = styled.button`
   background: transparent;
   border: none;
